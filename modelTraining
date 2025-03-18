@@ -1,0 +1,27 @@
+import cudf
+import cuml
+from cuml.ensemble import RandomForestClassifier
+from cuml.metrics import accuracy_score
+import joblib
+
+def train_model(X_train, y_train):
+    """
+    Trains a Random Forest model using cuML.
+    """
+    model = RandomForestClassifier(n_estimators=100, max_features='auto', random_state=42)
+    model.fit(X_train, y_train)
+    return model
+
+def evaluate_model(model, X_test, y_test):
+    """
+    Evaluates the model and returns accuracy.
+    """
+    predictions = model.predict(X_test)
+    accuracy = accuracy_score(y_test, predictions)
+    return accuracy
+
+def save_model(model, model_path):
+    """
+    Saves the trained model to disk.
+    """
+    joblib.dump(model, model_path)
