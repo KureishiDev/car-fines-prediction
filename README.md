@@ -17,7 +17,7 @@ This project aims to predict the most likely cars to commit traffic fines using 
 ## Installation
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/car-fines-prediction.git
+git clone https://github.com/KureishiDev/car-fines-prediction.git
 ```
 
 2. Install dependencies:
